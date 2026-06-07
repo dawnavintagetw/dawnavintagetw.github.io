@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dawn Vintage TW</title>
+<title>Dawnavintage TW</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Noto+Serif+TC:wght@300;400;500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -15,25 +15,23 @@
 *{box-sizing:border-box;margin:0;padding:0}
 body{background:var(--cream);color:var(--text);font-family:'Jost',sans-serif;font-weight:300;min-height:100vh}
 
-/* LANG */
+/* LANG — default zh */
+.en{display:none}.zh{display:block}
+span.en{display:none}span.zh{display:inline}
+body.lang-en .en{display:block}body.lang-en .zh{display:none}
+body.lang-en span.en{display:inline}body.lang-en span.zh{display:none}
+
 .lang-bar{background:var(--text);display:flex;justify-content:flex-end;padding:6px 24px;gap:4px}
 .lang-btn{background:none;border:none;color:#999;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.15em;cursor:pointer;padding:4px 10px;transition:color .2s}
 .lang-btn.active{color:#fff;border-bottom:1px solid #fff}
 .lang-btn:hover{color:#ddd}
 .sep{color:#444;font-size:11px;display:flex;align-items:center}
 
-/* default: show zh, hide en */
-.en{display:none}.zh{display:block}
-span.en{display:none}span.zh{display:inline}
-/* when lang-en active */
-body.lang-en .en{display:block}body.lang-en .zh{display:none}
-body.lang-en span.en{display:inline}body.lang-en span.zh{display:none}
-
 /* HEADER */
 header{text-align:center;padding:48px 24px 36px;border-bottom:.5px solid var(--border);background:var(--cream);animation:fadeDown .8s ease both}
 @keyframes fadeDown{from{opacity:0;transform:translateY(-12px)}to{opacity:1;transform:translateY(0)}}
-.logo-eyebrow{font-size:10px;letter-spacing:.3em;color:var(--muted);text-transform:uppercase;margin-bottom:10px;font-family:'Noto Serif TC',serif}
-.logo{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,8vw,52px);font-weight:300;letter-spacing:.06em;line-height:1;color:var(--text)}
+.logo-eyebrow{font-size:10px;letter-spacing:.3em;color:var(--muted);text-transform:uppercase;margin-bottom:10px}
+.logo{font-family:'Cormorant Garamond',serif;font-size:clamp(30px,8vw,50px);font-weight:300;letter-spacing:.06em;line-height:1;color:var(--text)}
 .logo em{font-style:italic;color:var(--accent-dark)}
 .logo-sub{font-size:11px;letter-spacing:.2em;color:var(--muted);margin-top:8px;text-transform:uppercase}
 .ig-link{display:inline-flex;align-items:center;gap:6px;margin-top:20px;padding:8px 20px;border:.5px solid var(--border);text-decoration:none;font-size:11px;letter-spacing:.15em;color:var(--muted);text-transform:uppercase;transition:all .2s}
@@ -63,35 +61,33 @@ header{text-align:center;padding:48px 24px 36px;border-bottom:.5px solid var(--b
 .card-img-inner{width:100%;height:100%;display:flex;align-items:center;justify-content:center;transition:transform .5s cubic-bezier(.25,0,0,1)}
 .card:hover .card-img-inner{transform:scale(1.04)}
 .card-img-inner img{width:100%;height:100%;object-fit:cover;display:block}
-.img-placeholder{font-family:'Cormorant Garamond',serif;font-size:18px;font-style:italic;color:var(--accent);letter-spacing:.05em;text-align:center;padding:16px;line-height:1.4;white-space:pre-line}
+.img-placeholder{font-family:'Cormorant Garamond',serif;font-size:18px;font-style:italic;color:var(--accent);text-align:center;padding:16px;line-height:1.5;white-space:pre-line}
 .card-badge{position:absolute;top:12px;left:12px;font-size:10px;letter-spacing:.12em;padding:4px 10px;text-transform:uppercase}
 .badge-sale{background:var(--text);color:var(--white)}
 .badge-sold{background:var(--muted);color:var(--white)}
 .card-info{padding:16px 18px 20px;border-top:.5px solid var(--border)}
 .card-brand{font-size:9px;letter-spacing:.25em;color:var(--muted);text-transform:uppercase;margin-bottom:5px}
-.card-name{font-family:'Noto Serif TC',serif;font-size:15px;font-weight:400;line-height:1.2;margin-bottom:10px;color:var(--text)}
-body.lang-en .card-name{font-family:'Cormorant Garamond',serif;font-size:18px}
+.card-name{font-size:15px;font-weight:400;line-height:1.2;margin-bottom:10px;color:var(--text)}
+.card-name.zh{font-family:'Noto Serif TC',serif}
+.card-name.en{font-family:'Cormorant Garamond',serif;font-size:18px}
 .card-prices{display:flex;align-items:center;gap:8px;margin-bottom:14px}
-.price-now{font-size:15px;font-weight:400;color:var(--accent-dark)}
+.price-now{font-size:15px;color:var(--accent-dark)}
 .price-old{font-size:12px;color:var(--muted);text-decoration:line-through}
 .price-saved{font-size:10px;color:#b05050;background:#fdf0f0;padding:2px 6px;border-radius:2px}
 .view-btn{width:100%;padding:11px 0;background:transparent;color:var(--text);border:.5px solid var(--text);font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;transition:all .25s}
 .view-btn:hover{background:var(--text);color:var(--white)}
-.view-btn.sold-btn{background:transparent;color:var(--muted);border-color:var(--border);cursor:not-allowed}
+.view-btn.sold-btn{color:var(--muted);border-color:var(--border);cursor:not-allowed}
 
-/* MODAL OVERLAY */
+/* MODAL */
 .modal-overlay{
   position:fixed;inset:0;z-index:1000;
   background:rgba(28,26,23,.55);
   backdrop-filter:blur(4px);
   display:flex;align-items:flex-start;justify-content:center;
-  padding:24px 16px 40px;
-  overflow-y:auto;
-  opacity:0;pointer-events:none;
-  transition:opacity .3s ease;
+  padding:24px 16px 40px;overflow-y:auto;
+  opacity:0;pointer-events:none;transition:opacity .3s ease;
 }
 .modal-overlay.open{opacity:1;pointer-events:all}
-
 .modal{
   background:var(--cream);width:100%;max-width:760px;
   position:relative;flex-shrink:0;
@@ -100,37 +96,27 @@ body.lang-en .card-name{font-family:'Cormorant Garamond',serif;font-size:18px}
   display:grid;grid-template-columns:1fr 1fr;
 }
 .modal-overlay.open .modal{transform:translateY(0) scale(1)}
-
 .modal-img{aspect-ratio:3/4;background:var(--warm);display:flex;align-items:center;justify-content:center;overflow:hidden}
 .modal-img img{width:100%;height:100%;object-fit:cover}
-.modal-close{position:absolute;top:14px;right:16px;background:none;border:none;cursor:pointer;font-size:22px;color:var(--muted);line-height:1;transition:color .2s;z-index:10}
+.modal-close{position:absolute;top:14px;right:16px;background:none;border:none;cursor:pointer;font-size:22px;color:var(--muted);z-index:10;transition:color .2s}
 .modal-close:hover{color:var(--text)}
-
 .modal-info{padding:36px 32px;display:flex;flex-direction:column}
 .modal-brand{font-size:9px;letter-spacing:.28em;color:var(--muted);text-transform:uppercase;margin-bottom:8px}
-.modal-name{font-family:'Noto Serif TC',serif;font-size:22px;font-weight:300;line-height:1.2;margin-bottom:16px}
-body.lang-en .modal-name{font-family:'Cormorant Garamond',serif;font-size:28px}
+.modal-name{line-height:1.2;margin-bottom:16px}
+.modal-name.zh{font-family:'Noto Serif TC',serif;font-size:22px;font-weight:300}
+.modal-name.en{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300}
 .modal-prices{display:flex;align-items:center;gap:10px;margin-bottom:6px}
-.modal-price-now{font-size:22px;font-weight:400;color:var(--accent-dark)}
+.modal-price-now{font-size:22px;color:var(--accent-dark)}
 .modal-price-old{font-size:14px;color:var(--muted);text-decoration:line-through}
 .modal-saved{font-size:11px;color:#b05050;background:#fdf0f0;padding:3px 8px;border-radius:2px;margin-bottom:20px;display:none}
 .modal-divider{height:.5px;background:var(--border);margin:16px 0}
 .modal-desc-title{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
 .modal-desc{font-size:13px;line-height:1.9;color:var(--muted);white-space:pre-line;margin-bottom:20px}
 .modal-sizes-title{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
-.modal-sizes{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px}
-
-/* size tags */
+.modal-sizes{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
 .size-tag{font-size:11px;padding:6px 16px;border:.5px solid var(--border);color:var(--text);letter-spacing:.08em}
-.size-tag.selectable{cursor:pointer;transition:all .15s}
-.size-tag.selectable:hover{border-color:var(--accent);color:var(--accent-dark)}
-.size-tag.selected{background:var(--text);color:var(--white);border-color:var(--text)}
-.size-tag.unavail{color:var(--muted);text-decoration:line-through;cursor:not-allowed}
-
-.size-hint{font-size:11px;color:#b05050;margin-bottom:16px;min-height:16px;transition:opacity .2s}
-
+.size-tag.unavail{color:var(--muted);text-decoration:line-through}
 .modal-care{font-size:11px;color:var(--muted);background:var(--warm);padding:10px 14px;border-left:2px solid var(--accent);line-height:1.7;margin-bottom:24px;white-space:pre-line}
-
 .modal-buy-btn{
   display:block;width:100%;padding:14px;
   background:var(--text);color:var(--white);
@@ -140,32 +126,32 @@ body.lang-en .modal-name{font-family:'Cormorant Garamond',serif;font-size:28px}
   border:none;cursor:pointer;transition:all .25s;
   margin-bottom:10px;
 }
-.modal-buy-btn:hover:not(.sold):not(.no-size){background:var(--accent-dark);letter-spacing:.27em}
-.modal-buy-btn.sold{background:var(--border);color:var(--muted);cursor:not-allowed}
-.modal-buy-btn.no-size{background:var(--border);color:var(--muted);cursor:not-allowed}
+.modal-buy-btn:hover{background:var(--accent-dark);letter-spacing:.27em}
+.modal-buy-btn.sold{background:var(--border);color:var(--muted);cursor:not-allowed;pointer-events:none}
 .modal-note{font-size:10px;color:var(--muted);text-align:center;letter-spacing:.06em;line-height:1.6}
 
 /* FOOTER */
 footer{text-align:center;padding:48px 24px;border-top:.5px solid var(--border);margin-top:1px;background:var(--warm)}
 .footer-logo{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;font-style:italic;color:var(--accent-dark);margin-bottom:12px}
-.footer-text{font-size:11px;color:var(--muted);letter-spacing:.1em;line-height:1.8;font-family:'Noto Serif TC',serif}
-body.lang-en .footer-text{font-family:'Jost',sans-serif}
+.footer-text{font-size:11px;color:var(--muted);letter-spacing:.1em;line-height:1.8}
+.footer-text.zh{font-family:'Noto Serif TC',serif}
 .footer-ig{display:inline-flex;align-items:center;gap:6px;margin-top:16px;padding:8px 20px;border:.5px solid var(--border);text-decoration:none;font-size:11px;letter-spacing:.15em;color:var(--muted);text-transform:uppercase;transition:all .2s}
 .footer-ig:hover{background:var(--text);color:var(--white);border-color:var(--text)}
 
 @media(max-width:640px){
   .grid{grid-template-columns:repeat(2,1fr)}
-  .logo{font-size:28px}
+  .logo{font-size:26px}
   header{padding:36px 16px 28px}
   .modal-overlay{padding:16px 10px 32px}
   .modal{grid-template-columns:1fr}
   .modal-img{aspect-ratio:4/3}
   .modal-info{padding:24px 20px}
-  .modal-name{font-size:20px}
+  .modal-name.zh{font-size:18px}
+  .modal-name.en{font-size:22px}
 }
 </style>
 </head>
-<body><!-- default lang-zh, no class needed since CSS defaults to zh -->
+<body>
 
 <!-- LANG BAR -->
 <div class="lang-bar">
@@ -177,8 +163,8 @@ body.lang-en .footer-text{font-family:'Jost',sans-serif}
 <!-- HEADER -->
 <header>
   <p class="logo-eyebrow"><span class="en">Curated Vintage Fashion · Taiwan</span><span class="zh">精選古著時尚・台灣</span></p>
-  <h1 class="logo"><em>Dawn</em> Vintage</h1>
-  <p class="logo-sub">dawnavintage.tw</p>
+  <h1 class="logo"><em>Dawna</em>vintage</h1>
+  <p class="logo-sub">@dawnavintage.tw</p>
   <a class="ig-link" href="https://www.instagram.com/dawnavintage.tw/" target="_blank">
     <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
     <span class="en">Follow on Instagram</span><span class="zh">追蹤 Instagram</span>
@@ -191,7 +177,7 @@ body.lang-en .footer-text{font-family:'Jost',sans-serif}
   <span class="zh">✦ 提供免運服務 &nbsp;✦&nbsp; Instagram 私訊下單 &nbsp;✦&nbsp; 每週新品到貨 &nbsp;✦&nbsp; 精選古著單品 &nbsp;✦&nbsp; 提供免運服務 &nbsp;✦&nbsp; Instagram 私訊下單 &nbsp;✦&nbsp; 每週新品到貨 &nbsp;✦&nbsp; 精選古著單品</span>
 </div></div>
 
-<!-- SECTION HEADER -->
+<!-- SECTION -->
 <div class="section-head">
   <p class="section-label"><span class="en">Current Collection</span><span class="zh">本季商品</span></p>
   <h2 class="section-title"><span class="en"><em>Summer</em> Bloom 2025</span><span class="zh"><em>夏日</em>盛放 2025</span></h2>
@@ -204,7 +190,7 @@ body.lang-en .footer-text{font-family:'Jost',sans-serif}
     <div class="card-img"><div class="card-img-inner"><div class="img-placeholder">Cecily&#10;Pink Tube</div></div>
     <span class="card-badge badge-sale">-10%</span></div>
     <div class="card-info">
-      <p class="card-brand">Dawn Vintage</p>
+      <p class="card-brand">Dawnavintage</p>
       <p class="card-name en">Cecily Pink Tube</p><p class="card-name zh">Cecily 粉色管狀上衣</p>
       <div class="card-prices"><span class="price-now">NT$ 355</span><span class="price-old">NT$ 395</span><span class="price-saved en">Save 10%</span><span class="price-saved zh">省 10%</span></div>
       <button class="view-btn"><span class="en">View Details</span><span class="zh">查看詳情</span></button>
@@ -215,7 +201,7 @@ body.lang-en .footer-text{font-family:'Jost',sans-serif}
     <div class="card-img"><div class="card-img-inner"><div class="img-placeholder">Yuki&#10;Top</div></div>
     <span class="card-badge badge-sale">-10%</span></div>
     <div class="card-info">
-      <p class="card-brand">Dawn Vintage</p>
+      <p class="card-brand">Dawnavintage</p>
       <p class="card-name en">Yuki Top</p><p class="card-name zh">Yuki 上衣</p>
       <div class="card-prices"><span class="price-now">NT$ 369</span><span class="price-old">NT$ 410</span><span class="price-saved en">Save 10%</span><span class="price-saved zh">省 10%</span></div>
       <button class="view-btn"><span class="en">View Details</span><span class="zh">查看詳情</span></button>
@@ -226,7 +212,7 @@ body.lang-en .footer-text{font-family:'Jost',sans-serif}
     <div class="card-img"><div class="card-img-inner"><div class="img-placeholder">Arin&#10;White Top</div></div>
     <span class="card-badge badge-sold"><span class="en">Sold Out</span><span class="zh">已售完</span></span></div>
     <div class="card-info">
-      <p class="card-brand">Dawn Vintage</p>
+      <p class="card-brand">Dawnavintage</p>
       <p class="card-name en">Arin White Top</p><p class="card-name zh">Arin 白色上衣</p>
       <div class="card-prices"><span class="price-now" style="color:var(--muted)">NT$ 342</span><span class="price-old">NT$ 380</span></div>
       <button class="view-btn sold-btn"><span class="en">Sold Out</span><span class="zh">已售完</span></button>
@@ -237,7 +223,7 @@ body.lang-en .footer-text{font-family:'Jost',sans-serif}
     <div class="card-img"><div class="card-img-inner"><div class="img-placeholder">Aurora&#10;TOP</div></div>
     <span class="card-badge badge-sold"><span class="en">Sold Out</span><span class="zh">已售完</span></span></div>
     <div class="card-info">
-      <p class="card-brand">Dawn Vintage</p>
+      <p class="card-brand">Dawnavintage</p>
       <p class="card-name en">Aurora TOP</p><p class="card-name zh">Aurora 上衣</p>
       <div class="card-prices"><span class="price-now" style="color:var(--muted)">NT$ 355</span></div>
       <button class="view-btn sold-btn"><span class="en">Sold Out</span><span class="zh">已售完</span></button>
@@ -248,7 +234,7 @@ body.lang-en .footer-text{font-family:'Jost',sans-serif}
     <div class="card-img"><div class="card-img-inner"><div class="img-placeholder">Bambi&#10;Skirt</div></div>
     <span class="card-badge badge-sold"><span class="en">Sold Out</span><span class="zh">已售完</span></span></div>
     <div class="card-info">
-      <p class="card-brand">Dawn Vintage</p>
+      <p class="card-brand">Dawnavintage</p>
       <p class="card-name en">Bambi Skirt</p><p class="card-name zh">Bambi 裙子</p>
       <div class="card-prices"><span class="price-now" style="color:var(--muted)">NT$ 252</span><span class="price-old">NT$ 280</span></div>
       <button class="view-btn sold-btn"><span class="en">Sold Out</span><span class="zh">已售完</span></button>
@@ -259,7 +245,7 @@ body.lang-en .footer-text{font-family:'Jost',sans-serif}
     <div class="card-img"><div class="card-img-inner"><div class="img-placeholder">Bambi&#10;Bikini Set</div></div>
     <span class="card-badge badge-sold"><span class="en">Sold Out</span><span class="zh">已售完</span></span></div>
     <div class="card-info">
-      <p class="card-brand">Dawn Vintage</p>
+      <p class="card-brand">Dawnavintage</p>
       <p class="card-name en">Bambi Bikini Set</p><p class="card-name zh">Bambi 比基尼套裝</p>
       <div class="card-prices"><span class="price-now" style="color:var(--muted)">NT$ 351</span><span class="price-old">NT$ 390</span></div>
       <button class="view-btn sold-btn"><span class="en">Sold Out</span><span class="zh">已售完</span></button>
@@ -270,7 +256,7 @@ body.lang-en .footer-text{font-family:'Jost',sans-serif}
 
 <!-- FOOTER -->
 <footer>
-  <p class="footer-logo">Dawn Vintage</p>
+  <p class="footer-logo">Dawnavintage</p>
   <p class="footer-text en">To place an order, DM us on Instagram.<br>We reply within 24 hours · Shipping across Taiwan</p>
   <p class="footer-text zh">如需下單，請至 Instagram 私訊我們。<br>24 小時內回覆 · 全台灣配送</p>
   <br>
@@ -279,16 +265,16 @@ body.lang-en .footer-text{font-family:'Jost',sans-serif}
     @dawnavintage.tw
   </a>
   <br><br>
-  <p class="footer-text" style="font-size:10px;letter-spacing:.05em">© 2025 Dawn Vintage TW</p>
+  <p class="footer-text" style="font-size:10px;letter-spacing:.05em">© 2025 Dawnavintage TW</p>
 </footer>
 
 <!-- MODAL -->
 <div class="modal-overlay" id="modal-overlay" onclick="handleOverlayClick(event)">
-  <div class="modal" id="modal-box">
+  <div class="modal">
     <button class="modal-close" onclick="closeModal()">✕</button>
     <div class="modal-img"><div class="img-placeholder" id="modal-img-ph"></div></div>
     <div class="modal-info">
-      <p class="modal-brand">Dawn Vintage</p>
+      <p class="modal-brand">Dawnavintage</p>
       <p class="modal-name en" id="modal-name-en"></p>
       <p class="modal-name zh" id="modal-name-zh"></p>
       <div class="modal-prices">
@@ -300,16 +286,15 @@ body.lang-en .footer-text{font-family:'Jost',sans-serif}
       <p class="modal-desc-title"><span class="en">Description</span><span class="zh">商品描述</span></p>
       <p class="modal-desc en" id="modal-desc-en"></p>
       <p class="modal-desc zh" id="modal-desc-zh"></p>
-      <p class="modal-sizes-title"><span class="en">Select Size</span><span class="zh">選擇尺寸</span></p>
+      <p class="modal-sizes-title"><span class="en">Available Sizes</span><span class="zh">可選尺寸</span></p>
       <div class="modal-sizes" id="modal-sizes"></div>
-      <p class="size-hint" id="size-hint"></p>
       <p class="modal-care" id="modal-care"></p>
-      <button class="modal-buy-btn no-size" id="modal-buy-btn" onclick="handleBuy()">
-        <span class="en">Order via Instagram DM</span><span class="zh">Instagram 私訊下單</span>
-      </button>
-      <p class="modal-note" id="modal-note">
-        <span class="en">Select a size to continue</span>
-        <span class="zh">請先選擇尺寸</span>
+      <a class="modal-buy-btn" id="modal-buy-btn" href="https://www.instagram.com/dawnavintage.tw/" target="_blank">
+        <span class="en">Order via Instagram</span><span class="zh">前往 Instagram 下單</span>
+      </a>
+      <p class="modal-note">
+        <span class="en">Tap above → DM us the item name &amp; size</span>
+        <span class="zh">點擊後前往 Instagram → 私訊商品名稱與尺寸</span>
       </p>
     </div>
   </div>
@@ -325,16 +310,11 @@ const PRODUCTS = {
   'bambi-bikini':{nameEn:'Bambi Bikini Set',nameZh:'Bambi 比基尼套裝',imgPh:'Bambi\nBikini Set',priceNow:'NT$ 351',priceOld:'NT$ 390',savedEn:'You save NT$ 39 (10% off)',savedZh:'省下 NT$ 39（九折優惠）',descEn:'A charming bow-detail bikini top in soft white. Features a front bow accent for a playful yet refined look. Top only.\n\nFabric: Stretch Cotton Blend · Bust 76–82cm (S) / 80–86cm (M)',descZh:'白色蝴蝶結比基尼上衣，正面蝴蝶結裝飾俏皮優雅。僅含上衣。\n\n材質：彈性棉混紡 · 胸圍 76–82cm（S）/ 80–86cm（M）',sizes:[{s:'S',ok:false},{s:'M',ok:false}],careEn:'✦  Hand wash only · Do not bleach\n✦  Lay flat to dry',careZh:'✦  僅限手洗・請勿漂白\n✦  平放晾乾',available:false}
 };
 
-let currentProduct = null;
-let selectedSize = null;
 const isZh = () => !document.body.classList.contains('lang-en');
 
 function openModal(id) {
   const p = PRODUCTS[id];
   if (!p) return;
-  currentProduct = p;
-  selectedSize = null;
-
   document.getElementById('modal-img-ph').textContent = p.imgPh;
   document.getElementById('modal-name-en').textContent = p.nameEn;
   document.getElementById('modal-name-zh').textContent = p.nameZh;
@@ -349,75 +329,26 @@ function openModal(id) {
   savedEl.style.display = hasSaved ? 'inline-block' : 'none';
   savedEl.textContent = isZh() ? p.savedZh : p.savedEn;
 
-  // sizes
-  const sizesEl = document.getElementById('modal-sizes');
-  if (p.available) {
-    sizesEl.innerHTML = p.sizes.map(s =>
-      s.ok
-        ? `<span class="size-tag selectable" onclick="selectSize(this,'${s.s}')">${s.s}</span>`
-        : `<span class="size-tag unavail">${s.s}</span>`
-    ).join('');
-  } else {
-    sizesEl.innerHTML = p.sizes.map(s =>
-      `<span class="size-tag unavail">${s.s}</span>`
-    ).join('');
-  }
+  document.getElementById('modal-sizes').innerHTML = p.sizes.map(s =>
+    `<span class="size-tag ${s.ok ? '' : 'unavail'}">${s.s}</span>`
+  ).join('');
 
-  // buy button state
   const btn = document.getElementById('modal-buy-btn');
-  const note = document.getElementById('modal-note');
-  const hint = document.getElementById('size-hint');
-  hint.textContent = '';
-  if (!p.available) {
-    btn.className = 'modal-buy-btn sold';
-    note.innerHTML = `<span class="en">This item is currently sold out</span><span class="zh">此商品目前已售完</span>`;
+  if (p.available) {
+    btn.classList.remove('sold');
+    btn.href = 'https://www.instagram.com/dawnavintage.tw/';
   } else {
-    btn.className = 'modal-buy-btn no-size';
-    note.innerHTML = `<span class="en">Select a size to continue</span><span class="zh">請先選擇尺寸</span>`;
+    btn.classList.add('sold');
+    btn.removeAttribute('href');
   }
 
   document.getElementById('modal-overlay').classList.add('open');
   document.body.style.overflow = 'hidden';
 }
 
-function selectSize(el, size) {
-  selectedSize = size;
-  document.querySelectorAll('.size-tag.selectable').forEach(t => t.classList.remove('selected'));
-  el.classList.add('selected');
-  document.getElementById('size-hint').textContent = '';
-
-  const btn = document.getElementById('modal-buy-btn');
-  btn.className = 'modal-buy-btn';
-  const note = document.getElementById('modal-note');
-  note.innerHTML = isZh()
-    ? `<span class="zh">點擊後將自動開啟 Instagram，帶入商品與尺寸資訊 ✦</span>`
-    : `<span class="en">Tap below — Instagram will open with your order pre-filled ✦</span>`;
-}
-
-function handleBuy() {
-  if (!currentProduct || !currentProduct.available) return;
-  if (!selectedSize) {
-    const hint = document.getElementById('size-hint');
-    hint.textContent = isZh() ? '⚠ 請先選擇尺寸' : '⚠ Please select a size first';
-    document.querySelectorAll('.size-tag.selectable').forEach(t => {
-      t.style.outline = '1.5px solid #b05050';
-      setTimeout(() => t.style.outline = '', 1500);
-    });
-    return;
-  }
-  const p = currentProduct;
-  const msg = isZh()
-    ? `您好！我想訂購以下商品 🌸\n\n• 商品：${p.nameZh}\n• 尺寸：${selectedSize}\n• 價格：${p.priceNow}\n\n請確認是否有貨，謝謝！`
-    : `Hi! I'd like to order:\n\n• Item: ${p.nameEn}\n• Size: ${selectedSize}\n• Price: ${p.priceNow}\n\nPlease confirm availability, thank you!`;
-  const encoded = encodeURIComponent(msg);
-  window.open(`https://ig.me/m/dawnavintage.tw?text=${encoded}`, '_blank');
-}
-
 function closeModal() {
   document.getElementById('modal-overlay').classList.remove('open');
   document.body.style.overflow = '';
-  currentProduct = null;
-  selectedSize = null;
 }
 
 function handleOverlayClick(e) {
@@ -427,20 +358,9 @@ function handleOverlayClick(e) {
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 
 function setLang(lang) {
-  if (lang === 'en') {
-    document.body.classList.add('lang-en');
-  } else {
-    document.body.classList.remove('lang-en');
-  }
+  document.body.classList.toggle('lang-en', lang === 'en');
   document.getElementById('btn-en').classList.toggle('active', lang === 'en');
-  document.getElementById('btn-zh').classList.toggle('active', lang === 'zh');
-  // update open modal text if needed
-  if (currentProduct) {
-    const p = currentProduct;
-    document.getElementById('modal-care').textContent = lang === 'en' ? p.careEn : p.careZh;
-    const savedEl = document.getElementById('modal-saved');
-    if (savedEl.style.display !== 'none') savedEl.textContent = lang === 'en' ? p.savedEn : p.savedZh;
-  }
+  document.getElementById('btn-zh').classList.toggle('active', lang !== 'en');
 }
 </script>
 </body>
